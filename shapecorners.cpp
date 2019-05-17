@@ -78,7 +78,7 @@ ShapeCornersEffect::ShapeCornersEffect() : KWin::Effect(), m_shader(0)
         deleteLater();
 }
 
-void ShapeCornersEffect::windowMaximizedStateChanged(Kwin::EffectWindow *w, bool horizontal, bool vertical) {
+void ShapeCornersEffect::windowMaximizedStateChanged(KWin::EffectWindow *w, bool horizontal, bool vertical) {
     if ((horizontal == true) && (vertical == true))
         applyEffect = w;
     else
@@ -236,7 +236,7 @@ ShapeCornersEffect::paintWindow(KWin::EffectWindow *w, int mask, QRegion region,
                 && !w->isDialog()
                 && !w->isModal())
             || w->windowClass().contains("krunner", Qt::CaseInsensitive)
-            || w->windowClass().contains("lattedock", Qt::CaseInsenstive)
+            || w->windowClass().contains("lattedock", Qt::CaseInsensitive)
             || !w->isPaintingEnabled()
 //            || !w->hasDecoration()
             || KWin::effects->activeFullScreenEffect()
